@@ -9,6 +9,7 @@ import "../styles/index.css";
 import Layout from './layout.js'
 
 //
+
 const root = createRoot(document.querySelector("#app"))
 
 //render your react application

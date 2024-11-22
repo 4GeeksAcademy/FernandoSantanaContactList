@@ -1,3 +1,7 @@
 /* 
     General Styles
 */
+.contactCard{
+    max-width: 870px;
+   height: 200px;
+}

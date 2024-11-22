@@ -10,6 +10,11 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
+import { AddContact } from "./views/addContact";
+import { Contact } from "./views/Contact";
+import { ContactCard } from "./component/ContactCard";
+import { EditContact } from "./views/editContact";
+
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -17,20 +22,20 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div>
-			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/demo" element={<Demo />} />
-						<Route path="/single/:theid" element={<Single />} />
-						<Route path="*" element={<h1>Not found!</h1>} />
-					</Routes>
-					<Footer />
-				</ScrollToTop>
-			</BrowserRouter>
-		</div>
+		<BrowserRouter basename={basename}>
+
+			{/* <Navbar /> */}
+			<Routes>
+				<Route path="/" element={<Contact />} />
+				<Route path="/addContact" element={<AddContact />} />
+				<Route path="/contactCard" element={<ContactCard />} />
+				<Route path="/editContact" element={<EditContact />} />
+				<Route path="*" element={<h1>Not found!</h1>} />
+			</Routes>
+
+
+		</BrowserRouter>
+
 	);
 };
 
